@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UC Shop - PUBG Mobile</title>
+  <style>
+    body {
+      background: #0d0d0d;
+      color: #00f7ff;
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #ff00ff;
+      text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff;
+    }
+    .card {
+      background: #111;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 15px auto;
+      width: 80%;
+      box-shadow: 0 0 15px #00f7ff;
+      transition: 0.3s;
+    }
+    .card:hover {
+      box-shadow: 0 0 25px #ff00ff;
+    }
+    .price {
+      font-size: 20px;
+      color: #00f7ff;
+    }
+    button {
+      background: #ff00ff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #00f7ff;
+      box-shadow: 0 0 20px #00f7ff;
+    }
+  </style>
+</head>
+<body>
+  <h1>💎 UC SHOP PUBG MOBILE 💎</h1>
+  <p>Выбери количество UC:</p>
+
+  <div class="card">
+    <h2>60 UC</h2>
+    <p class="price">69₽</p>
+    <button onclick="buy('60 UC')">Купить</button>
+  </div>
+
+  <div class="card">
+    <h2>325 UC</h2>
+    <p class="price">299₽</p>
+    <button onclick="buy('325 UC')">Купить</button>
+  </div>
+
+  <div class="card">
+    <h2>660 UC</h2>
+    <p class="price">549₽</p>
+    <button onclick="buy('660 UC')">Купить</button>
+  </div>
+
+  <div class="card">
+    <h2>1800 UC</h2>
+    <p class="price">1399₽</p>
+    <button onclick="buy('1800 UC')">Купить</button>
+  </div>
+
+  <script>
+    function buy(product) {
+      alert("Ты выбрал: " + product + "\nСкоро добавим оплату 💳");
+    }
+  </script>
+</body>
+</html>
