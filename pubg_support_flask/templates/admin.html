@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Админ-панель | PUBG UC</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<h1>Обращения пользователей</h1>
+<div id="messages"></div>
+
+<script>
+async function loadMessages() {
+    const res = await fetch('/api/messages');
+    const data = await res.json();
+    const container = document.getElementById('messages');
+    container.innerHTML = '';
+
+    data.forEach(msg => {
+        const div = document.createElement('div');
+        div.classList.add('message');
+        div.innerHTML = `
+            <strong>Имя:</strong> ${msg[1]} <br>
+            <strong>Email:</strong> ${msg[2]} <br>
+            <strong>Сообщение:</strong> ${msg[3]} <br>
+            <button onclick="deleteMessage(${msg[0]})">Сообщение рассмотрено</button>
+        `;
+        container.appendChild(div);
+    });
+}
+
+async function deleteMessage(id) {
+    await fetch('/api/delete/' + id, { method: 'DELETE' });
+    loadMessages();
+}
+
+loadMessages();
+</script>
+</body>
+</html>
