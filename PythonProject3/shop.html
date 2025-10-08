@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин PUBG UC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Тарифы PUBG UC</h1>
+        <p>Выберите подходящий пакет</p>
+    </header>
+
+    <section class="tariffs">
+        <div class="tariff-card">100 UC — 1$
+            <button onclick="buy(100, 1)">Купить</button>
+        </div>
+        <div class="tariff-card">500 UC — 4.5$
+            <button onclick="buy(500, 4.5)">Купить</button>
+        </div>
+        <div class="tariff-card">1000 UC — 8.5$
+            <button onclick="buy(1000, 8.5)">Купить</button>
+        </div>
+    </section>
+
+    <section class="info">
+        <h2>Условия и информация</h2>
+        <p>После оплаты UC будут доставлены мгновенно. Мы используем только безопасные методы платежей.</p>
+    </section>
+
+    <footer>
+        <button onclick="window.location.href='index.html'">На главную</button>
+    </footer>
+</div>
+
+<script>
+function buy(uc, price) {
+    // переход на страницу выбора метода оплаты
+    window.location.href = `payment.html?uc=${uc}&price=${price}`;
+}
+</script>
+</body>
+</html>
