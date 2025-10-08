@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход PUBG UC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Вход</h1>
+        <p>Введите данные вашего аккаунта</p>
+    </header>
+
+    <section class="auth-form">
+        <input type="email" id="login-email" placeholder="Email">
+        <input type="password" id="login-password" placeholder="Пароль">
+        <button onclick="loginUser()">Войти</button>
+        <p id="login-msg"></p>
+        <p>Нет аккаунта? <a href="register.html">Зарегистрироваться</a></p>
+    </section>
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>

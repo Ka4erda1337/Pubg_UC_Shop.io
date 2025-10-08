@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оплата UC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Выбор оплаты</h1>
+        <p>Выберите метод оплаты для вашего пакета UC</p>
+    </header>
+
+    <div class="tariffs">
+        <div class="tariff-card">
+            <h3>СБП — Тинькофф</h3>
+            <p>Оплата через QR или приложение банка</p>
+            <button id="sbp-btn">Оплатить</button>
+        </div>
+    </div>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const uc = params.get('uc');
+const price = params.get('price');
+
+document.getElementById('sbp-btn').addEventListener('click', () => {
+    window.location.href = `sbp.html?amount=${price}&uc=${uc}`;
+});
+</script>
+</body>
+</html>
